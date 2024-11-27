@@ -1,0 +1,64 @@
+// ブレイクポイント
+// モバイル端末の中でも特に小型のスマートフォン
+$xs-point: 420;
+// 一般的な小型デバイス（小型スマートフォンや古いスマートフォン）向け
+$sm-point: 576;
+// タブレットや中型のスマートフォン
+$md-point: 768;
+// ラップトップや小型デスクトップ向け
+$lg-point: 1025;
+// 大型のデスクトップモニター
+$xl-point: 1260;
+// 超大型モニター向け
+$xxl-point: 1400;
+
+$breakpoint-up: (
+  "xs": "screen and (min-width: #{$xs-point}px)",
+  "sm": "screen and (min-width: #{$sm-point}px)",
+  "md": "screen and (min-width: #{$md-point}px)",
+  "lg": "screen and (min-width: #{$lg-point}px)",
+  "xl": "screen and (min-width: #{$xl-point}px)",
+  "xxl": "screen and (min-width: #{$xxl-point}px)",
+) !default;
+
+$breakpoint-down: (
+  "xs": "screen and (max-width: #{$xs-point - 1}px)",
+  "sm": "screen and (max-width: #{$sm-point - 1}px)",
+  "md": "screen and (max-width: #{$md-point - 1}px)",
+  "lg": "screen and (max-width: #{$lg-point - 1}px)",
+  "xl": "screen and (max-width: #{$xl-point - 1}px)",
+  "xxl": "screen and (max-width: #{$xxl-point - 1}px)",
+) !default;
+
+$breakpoint-only: (
+  "xs": "screen and (max-width: #{$xs-point - 1}px)",
+  "sm-xs":
+    "screen and (max-width: #{$sm-point - 1}px) and (min-width: #{$xs-point}px)",
+  "md-sm":
+    "screen and (max-width: #{$md-point - 1}px) and (min-width: #{$sm-point}px)",
+  "lg-md":
+    "screen and (max-width: #{$lg-point - 1}px) and (min-width: #{$md-point}px)",
+  "xl-lg":
+    "screen and (max-width: #{$xl-point - 1}px) and (min-width: #{$lg-point}px)",
+  "xxl-xl":
+    "screen and (max-width: #{$xxl-point - 1}px) and (min-width: #{$xl-point}px)",
+  "xxl": "screen and (min-width: #{$xxl-point}px)",
+) !default;
+
+@mixin mq-up($breakpoint: md) {
+  @media #{map-get($breakpoint-up, $breakpoint)} {
+    @content;
+  }
+}
+
+@mixin mq-down($breakpoint: md) {
+  @media #{map-get($breakpoint-down, $breakpoint)} {
+    @content;
+  }
+}
+
+@mixin mq-only($breakpoint: md-sm) {
+  @media #{map-get($breakpoint-only, $breakpoint)} {
+    @content;
+  }
+}

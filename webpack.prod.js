@@ -1,8 +1,8 @@
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const { merge } = require("webpack-merge");
 const common = require("./webpack.common");
-const outputFile = "[name].[chunkhash]";
-const assetFile = "[name].[contenthash]";
+const outputFile = "[name]";
+const assetFile = "[name]";
 
 module.exports = () =>
   merge(common({ outputFile, assetFile }), {
