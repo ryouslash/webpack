@@ -43,6 +43,6 @@ utility 要素。
 - カスタムタクソノミーアーカイブページ「p-カスタムタクソノミー名-archive-カスタム投稿名-プロジェクト名」
   ※カスタムタクソノミーが 1 つの場合は、「p-taxonomy-archive-カスタム投稿名-プロジェクト名」で OK。
 
-## 本プロジェクトで使用しているアイコンについて
+## ファイルを複製して別プロジェクトで使用する方法
 
-※本プロジェクトでは Font Awesome Free（https://fontawesome.com/license/free）のアイコンを利用しています。
+yarn.lock と node_modules を削除して、yarn install をインストールして使って下さい。

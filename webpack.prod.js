@@ -8,7 +8,7 @@ module.exports = () =>
   merge(common({ outputFile, assetFile }), {
     mode: "production",
     plugins: [
-      // 出力ディレクトリをビルドの度にクリーンしてくれるプラグイン
+      // 出力ディレクトリをビルドの度にクリーンしてくれるプラグイン（ビルド後のファイルにWordPressタグを記載してく際は要削除。）
       new CleanWebpackPlugin(),
     ],
   });

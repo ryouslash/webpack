@@ -76,7 +76,7 @@ module.exports = ({ outputFile, assetFile }) => ({
       jQuery: "jquery",
       $: "jquery",
     }),
-    // JavaScript、CSSファイルを自動的にHTML内で読み込んでくれるプラグイン
+    // JavaScript、CSSファイルを自動的にHTML内で読み込んでくれるプラグイン（ビルド後のファイルにWordPressタグを記載してく際は要削除。）
     // index.html
     new HtmlWebpackPlugin({
       template: "./src/index.html",
