@@ -7,6 +7,7 @@ h1 {
   display: grid;
   user-select: none;
   appearance: none;
+  background-image: url("~@img/noimg.jpg");
 
   &:hover {
     transform: translateX(50px);

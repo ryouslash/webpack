@@ -1,4 +1,4 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const { merge } = require("webpack-merge");
 const common = require("./webpack.common");
 const outputFile = "[name].[chunkhash]";
@@ -8,12 +8,7 @@ module.exports = () =>
   merge(common({ outputFile, assetFile }), {
     mode: "production",
     plugins: [
-      // JavaScript、CSSファイルを自動的にHTML内で読み込んでくれるプラグイン
-      new HtmlWebpackPlugin({
-        template: "./src/index.html",
-        // filename: "",
-        // chunk: [""],
-        inject: "body", // 分割
-      }),
+      // 出力ディレクトリをビルドの度にクリーンしてくれるプラグイン
+      new CleanWebpackPlugin(),
     ],
   });

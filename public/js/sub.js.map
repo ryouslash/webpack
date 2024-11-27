@@ -1,1 +1,0 @@
-{"version":3,"file":"js/sub.js","mappings":";;;;AAAAA,OAAO,CAACC,GAAG,CAAC,oBAAoB,CAAC,C","sources":["webpack://Webpack/./src/sub.js"],"sourcesContent":["console.log(\"this is a sub file\");\n"],"names":["console","log"],"sourceRoot":""}

@@ -10,5 +10,10 @@
   },
   "rules": {
     "no-console": "off"
+  },
+  // 特定の変数がグローバルで存在することをESLintに伝える
+  "globals": {
+    "jQuery": "readonly", // jQueryをグローバルとして扱う
+    "$": "readonly" // $も認識させる
   }
 }

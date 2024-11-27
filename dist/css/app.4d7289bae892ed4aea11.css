@@ -1,0 +1,2 @@
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap);
+h1{font-size:2em;transition:all .3s;color:blue;display:grid;-webkit-user-select:none;-moz-user-select:none;user-select:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;background-image:url(../img/noimg.0f95fb07db464242dde1.jpg)}h1:hover{transform:translateX(50px);color:red}
