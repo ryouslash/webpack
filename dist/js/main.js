@@ -1,0 +1,1 @@
+(()=>{"use strict";console.log("This is main.ts"),console.log("This is sub.ts")})();

@@ -1,19 +1,20 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: {
-    main: ["/src/js/main.js", "./src/scss/style.scss"],
+    main: ["./src/js/main.js", "./src/scss/style.scss"],
   },
   output: {
     //出力先
     filename: "js/[name].js",
     path: path.resolve(__dirname, "dist"),
   },
-  externals: {
-    jquery: "jQuery",
-  },
+  // externals: {
+  //   jquery: "jQuery",
+  // },
   module: {
     rules: [
       {
@@ -84,6 +85,11 @@ module.exports = {
           : "css/[name].css";
       },
     }),
+    new HtmlWebpackPlugin({
+      template: "./src/index.html",
+      filename: "index.html",
+      chunks: ["main"],
+    }),
   ],
   //圧縮（minify）の設定
   optimization: {
@@ -118,6 +124,7 @@ module.exports = {
     },
   },
   resolve: {
+    extensions: [".ts", ".js"],
     alias: {
       "@scss": path.resolve(__dirname, "src/scss"),
       "@js": path.resolve(__dirname, "src/js"),
